@@ -27,7 +27,6 @@ class ImageAdapter(private var context: Context, private val listOfAllImages: Ar
             vi= inflater.inflate(R.layout.item_gallery,parent, false)
             val image: ImageView = vi.findViewById<View>(R.id.imgFolderImage) as ImageView
             image.setImageURI(android.net.Uri.parse(listOfAllImages[postion]))
-            listOfAllImages.removeAt(postion)
         }
         return vi
     }
