@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Status Bar Setting">
+        <ListPreference
+            android:entries="@array/colorName"
+            android:entryValues="@array/colorCode"
+            android:icon="@drawable/ic_color"
+            android:key="statusBarColor"
+            android:summary="It will changing color of status bar"
+            android:title="Status Bar Color" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Action Bar Setting">
+        <ListPreference
+            android:entries="@array/colorName"
+            android:entryValues="@array/colorCode"
+            android:icon="@drawable/ic_color"
+            android:key="actionBarColor"
+            android:summary="It will changing color of action bar"
+            android:title="Action Bar Color" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Photo Path Setting">
+        <ListPreference
+            android:entries="@array/imageFolder"
+            android:entryValues="@array/imageFolderPath"
+            android:icon="@drawable/ic_image"
+            android:key="photoPath"
+            android:summary="It will changing Main Activity Path Selection"
+            android:title="Path Selection" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">PreferencesAndSettingsAssignment</string>
+    <string name="setting">Setting</string>
+    <string name="image">image</string>
+    <string-array name="colorName">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Yellow</item>
+    </string-array>
+    <string-array name="colorCode">
+        <item>#C61414</item>
+        <item>#3F51B5</item>
+        <item>#4CAF50</item>
+        <item>#FFEB3B</item>
+    </string-array>
+    <string-array name="imageFolder">
+        <item>Camera</item>
+        <item>Screen Shots</item>
+        <item>Snapchat</item>
+    </string-array>
+    <string-array name="imageFolderPath">
+        <item>DCIM/Camera</item>
+        <item>DCIM/Screenshots</item>
+        <item>DCIM/Snapchat</item>
+    </string-array>
+</resources>
