@@ -1,7 +1,6 @@
 package com.example.preferencesandsettingsassignment.view.activity
 
 import android.Manifest
-import android.app.ProgressDialog
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
@@ -12,10 +11,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.Settings
-import android.view.Menu
-import android.view.MenuItem
-import android.view.Window
-import android.view.WindowManager
+import android.view.*
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -50,14 +46,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+
+
     private fun setAdapter() {
-        val progressDialog =ProgressDialog(this)
-        progressDialog.setTitle("Images Load")
-        progressDialog.setMessage("Images Loading is loading, please wait")
-        progressDialog.show()
+        pbImageLoading.visibility=View.VISIBLE
         val imageAdapter = ImageAdapter(this, listOfAllImages)
         gridViewGallery.adapter = imageAdapter
-        progressDialog.dismiss()
+        pbImageLoading.visibility=View.GONE
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
