@@ -28,12 +28,12 @@ import java.io.File
 class MainActivity : AppCompatActivity() {
     private lateinit var imagesPath: String
     private var listOfAllImages = ArrayList<String>()
-    private lateinit var getFileAccessPermission:ActivityResultLauncher<Intent>
+    private lateinit var getFileAccessPermission: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-         getFileAccessPermission = registerForActivityResult(
+        getFileAccessPermission = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) {
             if (it.resultCode == RESULT_OK) {
@@ -47,13 +47,11 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
     private fun setAdapter() {
-        pbImageLoading.visibility=View.VISIBLE
+        pbImageLoading.visibility = View.VISIBLE
         val imageAdapter = ImageAdapter(this, listOfAllImages)
         gridViewGallery.adapter = imageAdapter
-        pbImageLoading.visibility=View.GONE
+        pbImageLoading.visibility = View.GONE
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -157,6 +155,15 @@ class MainActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 101 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             loadImages()
+        } else {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                return
+            } else {
+                val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                val uri: Uri = Uri.fromParts("package", packageName, null)
+                intent.data = uri
+                startActivity(intent)
+            }
         }
     }
 }
