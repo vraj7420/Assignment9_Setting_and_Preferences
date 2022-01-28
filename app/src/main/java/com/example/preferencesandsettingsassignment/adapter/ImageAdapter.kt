@@ -1,5 +1,6 @@
 package com.example.preferencesandsettingsassignment.adapter
 
+import android.app.ProgressDialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -22,6 +23,7 @@ class ImageAdapter(private var context: Context, private val listOfAllImages: Ar
 
     override fun getView(postion: Int, view: View?, parent: ViewGroup?): View? {
         var vi: View? = view
+
         if (vi== null) {
             val inflater=LayoutInflater.from(context)
             vi= inflater.inflate(R.layout.item_gallery,parent, false)

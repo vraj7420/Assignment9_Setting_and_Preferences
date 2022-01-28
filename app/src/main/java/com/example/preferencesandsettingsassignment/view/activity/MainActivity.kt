@@ -1,6 +1,7 @@
 package com.example.preferencesandsettingsassignment.view.activity
 
 import android.Manifest
+import android.app.ProgressDialog
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
@@ -50,8 +51,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setAdapter() {
+        val progressDialog =ProgressDialog(this)
+        progressDialog.setTitle("Images Load")
+        progressDialog.setMessage("Images Loading is loading, please wait")
+        progressDialog.show()
         val imageAdapter = ImageAdapter(this, listOfAllImages)
         gridViewGallery.adapter = imageAdapter
+        progressDialog.dismiss()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
