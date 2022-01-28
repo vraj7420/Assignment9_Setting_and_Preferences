@@ -157,8 +157,6 @@ class MainActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 101 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             loadImages()
-        } else {
-            tackPermission()
         }
     }
 }
